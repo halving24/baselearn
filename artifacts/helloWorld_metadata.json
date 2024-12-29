@@ -6,6 +6,30 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					}
+				],
+				"name": "Greeter",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "sayHello",
 				"outputs": [
@@ -32,7 +56,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"test.sol": "helloWorld"
+			"helloWorld.sol": "helloWorld"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -46,12 +70,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"test.sol": {
-			"keccak256": "0x2ad28b8b4ed87cd6182e49eb6eeea3fc00e740463ad05936e4e4837bcb8ee32f",
+		"helloWorld.sol": {
+			"keccak256": "0xd9ac61e4dfaa2d4ee756b4176c0d6a54acffe751f38fff5dd69e31c4a9fadf9a",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://b27eeac848183ea78c3bb3839c2397daa2afa0ea67610e56d4d9e1e8747a7602",
-				"dweb:/ipfs/QmUcH9CxXkWLpMYEQQGqu1Ce5KmFSPRnS3UxRT3wd627i8"
+				"bzz-raw://ec40731c3443c9252a89020e351e88e21ac12393be4613026c1c4ca44c682a6f",
+				"dweb:/ipfs/QmbzmBJDvboxvnrFRUXRL6PnQSuznKiPtVvphThFmRAJAX"
 			]
 		}
 	},
