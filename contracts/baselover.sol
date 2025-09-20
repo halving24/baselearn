@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.20;
+pragma solidity ^0.8.24;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
@@ -7,7 +7,6 @@ import "@openzeppelin/contracts/utils/Address.sol";
 
 contract MyContract is Ownable {
     using Strings for uint256;
-    using Strings for address;
     using Address for address payable;
     constructor() Ownable(0x82f090BaC915D15b3F361626b58ef2e9751E4324) {}
 
@@ -38,7 +37,7 @@ contract MyContract is Ownable {
         string memory message = string(
             //abi.encodePacked(
             string.concat(
-                sender.toHexString(),
+                Strings.toHexString(sender),
                 " loves base blockchain ",
                 currentTimestamp.toString() // ✅ Uses OpenZeppelin's `Strings` for conversion
             )
