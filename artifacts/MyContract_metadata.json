@@ -34,6 +34,22 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "requested",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "available",
+						"type": "uint256"
+					}
+				],
+				"name": "InsufficientBalance",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address",
 						"name": "owner",
 						"type": "address"
@@ -182,25 +198,6 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"name": "messages",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
 				"inputs": [],
 				"name": "owner",
 				"outputs": [
@@ -294,9 +291,6 @@
 				},
 				"transferOwnership(address)": {
 					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
-				},
-				"withdrawETH(address,uint256)": {
-					"details": "Withdraws ETH from the contract (owner-only)."
 				}
 			},
 			"version": 1
@@ -396,11 +390,11 @@
 			]
 		},
 		"contracts/baselover.sol": {
-			"keccak256": "0x35ea32b0657b537a864866cae4f9aaddb9f08f49af277748ac2f6d6ec930eaec",
+			"keccak256": "0x2f7b50f1b3b6ac043d061439e2a44a6253be9e740510602fd040830978834f9e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://c01a3ea27b350e5fcc40797e22960935becee90d73013e334f743fcf2b81b505",
-				"dweb:/ipfs/QmdPQVeWcmD1Eayb5DjLxzczfzD8UjPUXR7Jm9hv5M7AZV"
+				"bzz-raw://93c23e5db5d1dd4f5cab5ab92531404c79fa8e145884dec602c9db2ace500b6c",
+				"dweb:/ipfs/QmSE2sFFFcrGQvncuUjo3P1HUaUMt3yCUgRgwhrw99tzHW"
 			]
 		}
 	},
