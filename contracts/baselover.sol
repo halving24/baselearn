@@ -15,10 +15,16 @@ contract MyContract is Ownable {
     event Withdrawal(address indexed to, uint256 amount);
     event ReceivedETH(address indexed sender, uint256 amount);
     event BaseLoveMessage(address indexed sender, string message, uint256 timestamp);
+    event ReceivedFallback(address indexed sender, uint256 amount); // For `fallback()`
 
     // --- ETH Handling ---
     receive() external payable {
         emit ReceivedETH(msg.sender, msg.value);
+    }
+
+    // Handle cases where `msg.data` is sent with ETH (e.g., contract mistakes)
+    fallback() external payable {
+        emit ReceivedFallback(msg.sender, msg.value);
     }
 
     // Mapping to store messages by address
