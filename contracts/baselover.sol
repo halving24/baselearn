@@ -3,11 +3,12 @@ pragma solidity ^0.8.20;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
-
+import "@openzeppelin/contracts/utils/Address.sol";
 
 contract MyContract is Ownable {
     using Strings for uint256;
     using Strings for address;
+    using Address for address payable;
     constructor() Ownable(0x82f090BaC915D15b3F361626b58ef2e9751E4324) {}
 
     // --- Events ---
@@ -40,8 +41,7 @@ contract MyContract is Ownable {
     /// @dev Withdraws ETH from the contract (owner-only).
     function withdrawETH(address payable _to, uint256 _amount) external onlyOwner {
         require(address(this).balance >= _amount, "Insufficient balance");
-        (bool success, ) = _to.call{value: _amount}("");
-        require(success, "Transfer failed");
+         _to.sendValue(_amount);
         emit Withdrawal(_to, _amount);
     }
 }

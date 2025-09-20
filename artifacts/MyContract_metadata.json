@@ -11,6 +11,27 @@
 				"type": "constructor"
 			},
 			{
+				"inputs": [],
+				"name": "FailedCall",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "balance",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "needed",
+						"type": "uint256"
+					}
+				],
+				"name": "InsufficientBalance",
+				"type": "error"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -195,6 +216,16 @@
 		],
 		"devdoc": {
 			"errors": {
+				"FailedCall()": [
+					{
+						"details": "A call to an address target failed. The target may have reverted."
+					}
+				],
+				"InsufficientBalance(uint256,uint256)": [
+					{
+						"details": "The ETH balance of the account is not enough to perform the operation."
+					}
+				],
 				"OwnableInvalidOwner(address)": [
 					{
 						"details": "The owner is not a valid owner account. (eg. `address(0)`)"
@@ -258,12 +289,28 @@
 				"dweb:/ipfs/QmfEckWLmZkDDcoWrkEvMWhms66xwTLff9DDhegYpvHo1a"
 			]
 		},
+		"@openzeppelin/contracts/utils/Address.sol": {
+			"keccak256": "0x6d0ae6e206645341fd122d278c2cb643dea260c190531f2f3f6a0426e77b00c0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://032d1201d839435be2c85b72e33206b3ea980c569d6ebf7fa57d811ab580a82f",
+				"dweb:/ipfs/QmeqQjAtMvdZT2tG7zm39itcRJkuwu8AEReK6WRnLJ18DD"
+			]
+		},
 		"@openzeppelin/contracts/utils/Context.sol": {
 			"keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
 			"license": "MIT",
 			"urls": [
 				"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
 				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+			]
+		},
+		"@openzeppelin/contracts/utils/Errors.sol": {
+			"keccak256": "0x6afa713bfd42cf0f7656efa91201007ac465e42049d7de1d50753a373648c123",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ba1d02f4847670a1b83dec9f7d37f0b0418d6043447b69f3a29a5f9efc547fcf",
+				"dweb:/ipfs/QmQ7iH2keLNUKgq2xSWcRmuBE5eZ3F5whYAkAGzCNNoEWB"
 			]
 		},
 		"@openzeppelin/contracts/utils/Panic.sol": {
@@ -307,11 +354,11 @@
 			]
 		},
 		"contracts/baselover.sol": {
-			"keccak256": "0xbe0b6a696efb21c24ae5a2600a2e7a8721dde2059eb5ceeccc713c28cff3e780",
+			"keccak256": "0x8f75b4aa9e23a252dfaf4a8d24ed3d84070ae8a787bfdc8c36787db68bbc7708",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://bb090bc66bea103bf5e53353c3e8f630417819ff52beebaff2b24a001c0e93ab",
-				"dweb:/ipfs/QmRM4AiA3AYZ4WjhDAy7WDnPT49PkPF6bBZutiUdCtTHt6"
+				"bzz-raw://23875fd7d9b79fbf96d82ef6d6a7956d985a8fe9b6b1429888b5def96eda41b6",
+				"dweb:/ipfs/QmfUxnH8qQVuREULrmbBNpBd62jVRPXwuzcvHCnepgJ5VK"
 			]
 		}
 	},
