@@ -13,10 +13,13 @@ contract MyContract is Ownable {
 
     // --- Events ---
     event Withdrawal(address indexed to, uint256 amount);
+    event ReceivedETH(address indexed sender, uint256 amount);
     event BaseLoveMessage(address indexed sender, string message, uint256 timestamp);
 
     // --- ETH Handling ---
-    receive() external payable {}
+    receive() external payable {
+        emit ReceivedETH(msg.sender, msg.value);
+    }
 
     // Mapping to store messages by address
     mapping(address => string) public messages;
@@ -27,7 +30,8 @@ contract MyContract is Ownable {
         uint256 currentTimestamp = block.timestamp;
 
         string memory message = string(
-            abi.encodePacked(
+            //abi.encodePacked(
+            string.concat(
                 sender.toHexString(),
                 " loves base blockchain ",
                 currentTimestamp.toString() // ✅ Uses OpenZeppelin's `Strings` for conversion
