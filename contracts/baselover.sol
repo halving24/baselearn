@@ -49,7 +49,7 @@ contract MyContract is Ownable {
     }
 
     /// @dev Withdraws ETH from the contract (owner-only).
-    function withdrawETH(address payable _to, uint256 _amount) external onlyOwner {
+    function withdrawETH(address payable _to, uint256 _amount) external onlyOwner { 
         require(address(this).balance >= _amount, "Insufficient balance");
          _to.sendValue(_amount);
         emit Withdrawal(_to, _amount);
